@@ -10,4 +10,5 @@ app.use(cors({
 app.use(express.json());
 app.use('/api/upload',imageRoutes);   //this image name must handle samename in frontend
 
+
 module.exports=app
