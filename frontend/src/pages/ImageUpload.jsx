@@ -25,11 +25,11 @@ formData.append("price",Number(price));
 // }                               
 console.log(formData)
   if(edit){
-const response=await axios.put(`http://127.0.0.1:5003/api/upload/${edit}`,formData);
+const response=await axios.put(`https://image-upload-qy3m.onrender.com/api/upload/${edit}`,formData);
 console.log("product update response is:",response.data)
  toast.success("product  updated successfully")
   }else{
-    const response=await axios.post("http://127.0.0.1:5003/api/upload",formData)
+    const response=await axios.post("https://image-upload-qy3m.onrender.com/api/upload",formData)
 console.log("create image response is:",response.data)
  toast.success("product created successfully")
   }
@@ -50,7 +50,7 @@ setLoading(false);
 
     const handleProducts=async()=>{
 try{
-  const response=await axios.get('http://127.0.0.1:5003/api/upload');
+  const response=await axios.get('https://image-upload-qy3m.onrender.com/api/upload');
   setImages(response.data);
  
   setLoading(false);
@@ -83,7 +83,7 @@ setPhoto(null)  //in image browser cannot pre-file so we just set null to old im
 
 const handleDelete=async(id)=>{
   try{
-const response= await axios.delete(`http://127.0.0.1:5003/api/upload/${id}`);
+const response= await axios.delete(`https://image-upload-qy3m.onrender.com/api/upload/${id}`);
 console.log("product delete response is:",response.data)
 handleProducts();
   }catch(err){
